@@ -1,0 +1,136 @@
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+}
+
+h1 {
+    color: #333;
+    
+    
+}
+
+#contenedor {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 20px; 
+    max-width: 1200px;
+    width: 100%;
+}
+
+#contenedor1, #contenedor2 {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    padding: 40px; 
+    flex: 1; 
+    min-width: 250px;
+}
+
+
+.student {
+    padding: 15px; 
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    min-height: 100vh;
+}
+
+h1 {
+    color: #333;
+    text-align: left; /* Alineación a la izquierda */
+    font-size: 2.5em;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+h2 {
+    color: #333;
+    text-align: center; /* Centrar los títulos de grupos */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#contenedor {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los contenedores */
+    align-items: flex-start; /* Alinea los contenedores en la parte superior */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin-bottom: 20px; /* Espacio debajo del contenedor */
+}
+
+#contenedor1, #contenedor2 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px; 
+    flex: 1; /* Hace que los contenedores ocupen el mismo espacio */
+    min-width: 250px; /* Establece un ancho mínimo para los contenedores */
+    max-width: 45%; /* Limita el ancho de cada contenedor al 45% */
+}
+
+#chart-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px; 
+    min-width: 300px;
+    margin-left: 100px;
+    
+     /* Ocupa 25% del ancho del contenedor */
+}
+
+.student {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container {
+    display: flex; /* Permite la alineación de los gráficos */
+    justify-content: center; /* Centra los gráficos horizontalmente */
+    margin-top: 20px; /* Espacio encima del contenedor de gráficos */
+    width: 100%;
+}
+
+canvas {
+    max-width: 100%; /* Asegura que los gráficos no excedan el contenedor */
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Listas de Estudiantes</h1>
+
+    <div id="contenedor">
+
+<div id="contenedor1">
+    <h1>Grupo A</h1>
+    <div id="students-list"></div>
+
+    </div>
+
+    <div id="contenedor2">
+        <h1>Grupo B</h1>
+        <div id="students-list-2"></div>
+    
+    </div>
+
+    <div id="chart-container">
+        <canvas id="studentPieChart" width="300" height="400"></canvas>
+    </div>
+
+    </div>
+
+    
+
+    <!-- Incluir la librería de Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Datos de ejemplo
+        const studentData = {
+            sobresalientes: 10, // Estudiantes sobresalientes
+            promedio: 8,       // Estudiantes promedio
+            rezagados: 3       // Estudiantes rezagados
+        };
+
+        // Configuración del gráfico de pie
+        const data = {
+            labels: ['Sobresalientes', 'Promedio', 'Rezagados'],
+            datasets: [{
+                data: [studentData.sobresalientes, studentData.promedio, studentData.rezagados], // Datos
+                backgroundColor: ['#4CAF50', '#FFC107', '#F44336'], // Colores: verde, amarillo y rojo
+                hoverOffset: 4
+            }]
+        };
+
+        // Opciones de configuración del gráfico
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom', // Posicionamos la leyenda debajo del gráfico
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.chart._metasets[0].total;
+                                const percentage = ((value / total) * 100).toFixed(2);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Renderizamos el gráfico
+        const ctx = document.getElementById('studentPieChart').getContext('2d');
+        const studentPieChart = new Chart(ctx, config);
+    </script>
+
+    
+</body>
+</html>

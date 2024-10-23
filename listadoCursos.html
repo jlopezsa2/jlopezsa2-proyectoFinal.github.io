@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .course-section {
+            margin-bottom: 40px;
+        }
+
+        #courses-list-primaria, #courses-list-eso {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .course {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .course h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            font-size: 0.9em; /* Tamaño de fuente para las asignaturas */
+            color: #777; /* Color más suave para las asignaturas */
+            margin: 5px 0 10px 0; /* Espacio entre párrafos */
+        }
+
+        .course .legend {
+            font-size: 0.9em; /* Tamaño de fuente para la leyenda */
+            color: #555; /* Color más suave para la leyenda */
+            margin-top: 5px; /* Espacio adicional arriba de la leyenda */
+        }
+
+        .course button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de Cursos</h1>
+
+    <!-- Sección de Primaria -->
+    <div class="course-section">
+        <h2>Primaria</h2>
+        <div id="courses-list-primaria">
+            <!-- Curso de Primaria 1 -->
+            <div class="course">
+                <h3>Primero de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias Naturales.</p>
+                
+                <button onclick="goToCourse('primaria1')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de Primaria 2 -->
+            <div class="course">
+                <h3>Segundo de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias Sociales.</p>
+               
+                <button onclick="goToCourse('primaria2')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de Primaria 3 -->
+            <div class="course">
+                <h3>Tercero de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias Naturales.</p>
+                
+                <button onclick="goToCourse('primaria3')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de Primaria 4 -->
+            <div class="course">
+                <h3>Cuarto de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Historia, Geografía.</p>
+               
+                <button onclick="goToCourse('primaria4')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de Primaria 5 -->
+            <div class="course">
+                <h3>Quinto de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias Naturales, Educación Física.</p>
+                
+                <button onclick="goToCourse('primaria5')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de Primaria 6 -->
+            <div class="course">
+                <h3>Sexto de Primaria</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Historia, Ciencias Sociales.</p>
+                
+                <button onclick="goToCourse('primaria6')">Ir al Curso</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de ESO -->
+    <div class="course-section">
+        <h2>ESO</h2>
+        <div id="courses-list-eso">
+            <!-- Curso de ESO 1 -->
+            <div class="course">
+                <h3>Primero de ESO</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias, Educación Física.</p>
+                
+                <button onclick="goToCourse('eso1')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de ESO 2 -->
+            <div class="course">
+                <h3>Segundo de ESO</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Biología, Historia.</p>
+                
+                <button onclick="goToCourse('eso2')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de ESO 3 -->
+            <div class="course">
+                <h3>Tercero de ESO</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Ciencias Sociales, Geografía.</p>
+                
+                <button onclick="goToCourse('eso3')">Ir al Curso</button>
+            </div>
+
+            <!-- Curso de ESO 4 -->
+            <div class="course">
+                <h3>Cuarto de ESO</h3>
+                <p>Asignaturas: Lengua, Matemáticas, Física, Química.</p>
+                
+                <button onclick="goToCourse('eso4')">Ir al Curso</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para redirigir a una página de curso específica
+        function goToCourse(courseName) {
+            window.location.href = 'grupos.html';
+        }
+    </script>
+
+</body>
+</html>
